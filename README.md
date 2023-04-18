@@ -1,8 +1,13 @@
-# Nuxt 3 Minimal Starter
+# CATETRY
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a web app designed to utilize open ai Chat GPT to create cat poetry based on limited inputs of the user. 
 
-## Setup
+The initial build will provide some limited multiple choice inputs along with the cats name.
+Future releases may include the ability to add custom text. 
+
+The initial version is designed to drastically reduce calls to Chat GPT to avoid running costs while the idea and audience grows. 
+
+## Build setup
 
 Make sure to install the dependencies:
 
