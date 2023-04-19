@@ -19,15 +19,6 @@ export default defineNuxtConfig({
             ]
         },
     },
-    modules: ["@vuestic/nuxt"],
-    vuestic: {
-        config: {
-            colors: {
-                variables: {
-                    primary: "#EACA15",
-                    secondary: "#1535EA",
-                },
-            },
-        },
-    },
+    css: ["@/assets/sass/app.scss"],
+    modules: ["@inkline/nuxt"],
 })
