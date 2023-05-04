@@ -21,4 +21,7 @@ export default defineNuxtConfig({
     },
     css: ["@/assets/sass/app.scss"],
     modules: ["@inkline/nuxt"],
+    runtimeConfig: {
+        openAIKey: process.env.OPENAIKEY
+    }, // availabe only server side
 })
