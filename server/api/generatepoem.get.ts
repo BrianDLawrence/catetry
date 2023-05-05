@@ -4,6 +4,7 @@
 
 import { Configuration, OpenAIApi } from 'openai'
 const config = useRuntimeConfig()
+console.log(config)
 
 export default defineEventHandler(async (event) => {
 

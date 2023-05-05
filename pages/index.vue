@@ -1,6 +1,6 @@
 <template>
   <h1 class="title">Cats and Poetry create Catetry</h1>
-  <!--<ThePoemGenerator></ThePoemGenerator>-->
+  <ThePoemGenerator></ThePoemGenerator>
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";

@@ -5,12 +5,14 @@
         <i-button @click="generatePoem">Generate Poem</i-button>
       </i-column>
       <i-column xs="4">
-        <div v-if="isLoading">Loading...</div>
+        <div v-if="isLoading"><i-loader color="primary" /></div>
         <div v-else>
-          {{ poem }}
+          <span style="white-space: pre">{{ poem }}</span>
         </div>
       </i-column>
     </i-row>
+    <br />
+    <br />
   </i-container>
 </template>
 
@@ -34,6 +36,7 @@ export default {
       });
       if (response) {
         this.poem = response.value;
+        this.isLoading = false;
       }
     },
   },
