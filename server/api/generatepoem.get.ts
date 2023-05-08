@@ -4,7 +4,6 @@
 
 import { Configuration, OpenAIApi } from 'openai'
 const config = useRuntimeConfig()
-console.log(config)
 
 export default defineEventHandler(async (event) => {
 
@@ -16,9 +15,8 @@ export default defineEventHandler(async (event) => {
 
     const query = getQuery(event);
 
-    console.log(query.attributes)
-
-    const question = "Can you please create a poem that highlights the good attributes of a Siamese cat named Arturo? Please include common attributes of Siamese cats and additionally the following unique attributes of Arturo: Stubborn and creepy."
+    const question = "Can you please create a poem that highlights the good attributes of a cat named " + query.name + "? Please include common attributes of " + query.breed + " cats and additionally the following unique attributes of " + query.name + ":" + query.attributes + "."
+    console.log("To Chat GPT:" + question)
 
     const configuration = new Configuration({
         apiKey: config.openAIKey

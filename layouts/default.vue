@@ -9,13 +9,6 @@
               <i-nav-item to="/poems"> Poems </i-nav-item>
               <i-nav-item to="/about"> About </i-nav-item>
             </i-nav>
-            <i-input placeholder="Type something..">
-              <template #append>
-                <i-button color="secondary">
-                  <i-icon name="ink-search" />
-                </i-button>
-              </template>
-            </i-input>
           </i-navbar-collapsible>
         </i-navbar>
       </i-layout-header>
