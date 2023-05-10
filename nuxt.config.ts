@@ -19,8 +19,7 @@ export default defineNuxtConfig({
             ]
         },
     },
-    css: ["@/assets/sass/app.scss"],
-    modules: ["@inkline/nuxt"],
+    modules: ['@nuxtjs/tailwindcss'],
     runtimeConfig: {
         openAIKey: process.env.OPENAIKEY,
         mongoURI: process.env.MONGOURI

@@ -1,55 +1,57 @@
 <template>
-  <i-container>
-    <i-row center>
-      <i-column xs="2">
-        <i-form>
-          <i-form-group required>
-            <i-form-label>Name</i-form-label>
-            <i-input v-model="catName" placeholder="Cat Name" />
-          </i-form-group>
-
-          <i-form-group required>
-            <i-form-label>Breed</i-form-label>
-            <i-select
-              v-model="breed_selected"
-              :options="breed_options"
-              placeholder="Choose breed.."
-            />
-          </i-form-group>
-        </i-form>
-        <br />
-      </i-column>
-      <i-column xs="4">
-        <i-form>
-          <i-form-group required>
-            <i-form-label>Brief description (behaviors, traits)</i-form-label>
-            <i-textarea
-              v-model="behavior_traits"
-              placeholder="enter behaviors and traits"
-            />
-          </i-form-group>
-        </i-form>
-        <br />
-      </i-column>
-    </i-row>
-    <i-row center>
-      <i-column xs="4">
-        <i-button center @click="generatePoem">Generate Poem</i-button>
-        <div v-if="isLoading"><i-loader color="primary" /></div>
-        <div v-else>
+  <div class="container mx-auto px-2">
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Cat's Name</span>
+        </label>
+        <input
+          v-model="catName"
+          type="text"
+          placeholder="Your cat's name"
+          class="input input-primary"
+        />
+        <label class="label">
+          <span class="label-text">Breed</span>
+        </label>
+        <select
+          class="select select-primary w-full max-w-xs"
+          v-model="breed_selected"
+        >
+          <option value="" selected disabled>Select your cat's breed</option>
+          <option
+            v-for="option in breed_options"
+            :value="option.value"
+            :key="option.id"
+          >
+            {{ option.label }}
+          </option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Brief description</span>
+          <span class="label-text-alt">Cat Behaviors or Traits</span>
+        </label>
+        <textarea
+          v-model="behavior_traits"
+          class="textarea textarea-primary h-32"
+          placeholder="Behaviors, Traits"
+        ></textarea>
+      </div>
+      <div class="mx-auto justify-items-center md:col-span-2">
+        <button class="btn" @click="generatePoem">Generate Poem</button>
+      </div>
+      <div class="mx-auto justify-items-center md:col-span-2" v-if="isLoading">
+        <progress progress-success class="progress w-56"></progress>
+      </div>
+      <div class="mx-auto justify-items-center md:col-span-2" v-else>
+        <p class="font-semibold">
           <span style="white-space: pre">{{ poem }}</span>
-        </div>
-        <br />
-      </i-column>
-    </i-row>
-    <i-row center>
-      <i-column xs="4">
-        <i-button @click="savePoem">Save Poem</i-button>
-      </i-column>
-    </i-row>
-    <br />
-    <br />
-  </i-container>
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -60,7 +62,7 @@ export default {
       poem: "",
       catName: "",
       isLoading: false,
-      breed_selected: null,
+      breed_selected: "",
       breed_options: [
         { id: 1, label: "American Shorthair" },
         { id: 2, label: "Siamese" },

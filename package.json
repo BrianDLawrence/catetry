@@ -10,13 +10,12 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-module": "^4.0.2",
-    "nuxt": "^3.4.1",
-    "sass": "^1.62.0",
-    "sass-loader": "^13.2.2"
+    "@nuxtjs/tailwindcss": "^6.6.8",
+    "@tailwindcss/typography": "^0.5.9",
+    "nuxt": "^3.4.1"
   },
   "dependencies": {
-    "@inkline/inkline": "^3.2.2",
-    "@inkline/nuxt": "^3.1.4",
+    "daisyui": "^2.51.6",
     "mongodb": "5.4",
     "openai": "^3.2.1"
   }

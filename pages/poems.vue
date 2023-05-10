@@ -1,15 +1,14 @@
 <template>
-  <i-layout>
-    <i-layout-header class="_text-align:center">
-      <h1>Poems</h1>
-    </i-layout-header>
-
-    <i-layout-content>
-      <p class="_text-align:left">
-        <span style="white-space: pre">{{ data }}</span>
-      </p>
-    </i-layout-content>
-  </i-layout>
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Poems</h1>
+        <p class="py-6">
+          <span style="white-space: pre">{{ data }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
