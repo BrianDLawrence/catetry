@@ -24,7 +24,7 @@
             :value="option.value"
             :key="option.id"
           >
-            {{ option.label }}
+            {{ option.value }}
           </option>
         </select>
       </div>
@@ -64,11 +64,11 @@ export default {
       isLoading: false,
       breed_selected: "",
       breed_options: [
-        { id: 1, label: "American Shorthair" },
-        { id: 2, label: "Siamese" },
-        { id: 3, label: "Burmese" },
-        { id: 4, label: "Bengal" },
-        { id: 5, label: "Cornish Rex" },
+        { id: 1, value: "American Shorthair" },
+        { id: 2, value: "Siamese" },
+        { id: 3, value: "Burmese" },
+        { id: 4, value: "Bengal" },
+        { id: 5, value: "Cornish Rex" },
       ],
       behavior_traits: "",
     };
