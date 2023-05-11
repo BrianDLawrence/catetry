@@ -40,10 +40,16 @@
         ></textarea>
       </div>
       <div class="mx-auto justify-items-center md:col-span-2">
-        <button class="btn" @click="generatePoem">Generate Poem</button>
+        <button
+          class="btn"
+          @click="generatePoem"
+          :disabled="isGenerateDisabled"
+        >
+          Generate Poem
+        </button>
       </div>
       <div class="mx-auto justify-items-center md:col-span-2" v-if="isLoading">
-        <progress progress-success class="progress w-56"></progress>
+        <progress class="progress progress-success w-56"></progress>
       </div>
       <div class="mx-auto justify-items-center md:col-span-2" v-else>
         <p class="font-semibold">
@@ -54,50 +60,52 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Poem Generator",
-  data() {
-    return {
-      poem: "",
-      catName: "",
-      isLoading: false,
-      breed_selected: "",
-      breed_options: [
-        { id: 1, value: "American Shorthair" },
-        { id: 2, value: "Siamese" },
-        { id: 3, value: "Burmese" },
-        { id: 4, value: "Bengal" },
-        { id: 5, value: "Cornish Rex" },
-      ],
-      behavior_traits: "",
-    };
-  },
-  methods: {
-    async generatePoem() {
-      this.isLoading = true;
+<script lang='ts' setup>
+const { data: breed_options } = await useFetch("/api/breeds");
+const poem = ref("");
+const catName = ref("");
+const isLoading = ref(false);
+const breed_selected = ref("");
+const behavior_traits = ref("");
 
-      const { data: response } = await useFetch("/api/generatepoem", {
-        query: {
-          name: this.catName,
-          breed: this.breed_selected,
-          attributes: this.behavior_traits,
-        },
-      });
-      if (response) {
-        this.poem = response.value;
-        this.isLoading = false;
-      }
+const isGenerateDisabled = computed(() => {
+  return (
+    catName.value == "" ||
+    breed_selected.value == "" ||
+    behavior_traits.value == ""
+  );
+});
+
+const generatePoem = async () => {
+  isLoading.value = true;
+
+  const { data: response } = await useFetch("/api/generatepoem", {
+    query: {
+      name: catName.value,
+      breed: breed_selected.value,
+      attributes: behavior_traits.value,
     },
-    async savePoem() {
-      const { data: response } = await useFetch("/api/poem", {
-        method: "post",
-        body: { test: 123 },
-      });
-      if (response) {
-        console.log(response.value);
-      }
+  });
+  if (response) {
+    poem.value = response.value!;
+    savePoem();
+    isLoading.value = false;
+  }
+};
+
+const savePoem = async () => {
+  const { data: response } = await useFetch("/api/poem", {
+    method: "post",
+    body: {
+      poem: poem.value,
+      name: catName.value,
+      breed: breed_selected.value,
+      attributes: behavior_traits.value,
+      date: new Date().toUTCString(),
     },
-  },
+  });
+  if (response) {
+    console.log(response.value);
+  }
 };
 </script>

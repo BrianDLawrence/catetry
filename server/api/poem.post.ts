@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
         })
 
     const body = await readBody(event)
-    console.log(body)
+
     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
     const client = new MongoClient(config.mongoURI, {
         serverApi: {
@@ -30,9 +30,20 @@ export default defineEventHandler(async (event) => {
     try {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
-        // Send a ping to confirm a successful connection
-        await client.db("admin").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+
+        const database = client.db("CatetryDB");
+        const poemsCollection = database.collection("Poems");
+        // create a document to insert
+        const poem = {
+            poem: body.poem,
+            name: body.name,
+            breed: body.breed,
+            attributes: body.attributes,
+            date: body.date
+        }
+        const result = await poemsCollection.insertOne(poem);
+        console.log(`A poem was inserted to the CatetryDB with the _id: ${result.insertedId}`)
+
     } finally {
         // Ensures that the client will close when you finish/error
         await client.close();
