@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
         const poems = poemsCollection.find<Poem>(
             query,
             {
-                sort: { date: -1 }, //return latest first by date
+                sort: { $natural: -1 }, //return latest first by date
                 projection: { _id: 0, poem: 1, name: 1, breed: 1, attributes: 1, date: 1 },
             }
         ).limit(poemLimit);
