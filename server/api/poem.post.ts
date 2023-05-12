@@ -1,9 +1,6 @@
 /**
- * Utilize openAI to generate a poem based on the Cat
+ * Save generatered poem to db
  */
-
-import { Configuration, OpenAIApi } from 'openai'
-
 import { MongoClient, ServerApiVersion } from 'mongodb'
 
 const config = useRuntimeConfig()

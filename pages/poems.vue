@@ -1,11 +1,22 @@
 <template>
-  <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold">Poems</h1>
-        <p class="py-6">
-          <span style="white-space: pre">{{ data }}</span>
-        </p>
+  <div
+    class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5 bg-neutral-content"
+  >
+    <div
+      class="card w-128 bg-base-100 shadow-xl"
+      v-for="poem in data"
+      :key="poem.id"
+    >
+      <div class="card-body">
+        <h2 class="card-title">{{ poem.name }}</h2>
+        <article
+          class="prose text-sm md:text-base text-overflow: ellipsis truncate hover:text-clip"
+        >
+          <span style="white-space: pre">{{ poem.poem }}</span>
+        </article>
+        <div class="card-actions justify-end text-sm">
+          {{ poem.breed }} Generated on {{ poem.date }}
+        </div>
       </div>
     </div>
   </div>
