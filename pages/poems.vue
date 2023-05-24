@@ -7,17 +7,19 @@
       v-for="poem in data"
       :key="poem.id"
     >
-      <div class="card-body">
-        <h2 class="card-title">{{ poem.name }}</h2>
-        <article
-          class="prose text-sm md:text-base text-overflow: ellipsis truncate hover:text-clip"
-        >
-          <span style="white-space: pre">{{ poem.poem }}</span>
-        </article>
-        <div class="card-actions justify-end text-sm">
-          {{ poem.breed }} Generated on {{ poem.date }}
+      <NuxtLink :to="`/p${poem._id}`">
+        <div class="card-body">
+          <h2 class="card-title">{{ poem.name }}</h2>
+          <article
+            class="prose text-sm md:text-base text-overflow: ellipsis truncate hover:text-clip"
+          >
+            <span style="white-space: pre">{{ poem.poem }}</span>
+          </article>
+          <div class="card-actions justify-end text-sm">
+            {{ poem.breed }} Generated on {{ poem.date }}
+          </div>
         </div>
-      </div>
+      </NuxtLink>
     </div>
   </div>
 </template>
