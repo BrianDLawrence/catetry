@@ -15,8 +15,8 @@
           >
             <span style="white-space: pre">{{ poem.poem }}</span>
           </article>
-          <div class="card-actions justify-end text-sm">
-            {{ poem.breed }} Generated on {{ poem.date }}
+          <div class="card-actions justify-end text-xs">
+            Poem generated on {{ poem.date }} for {{ poem.breed }}
           </div>
         </div>
       </NuxtLink>

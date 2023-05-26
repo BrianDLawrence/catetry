@@ -12,6 +12,7 @@ interface Poem {
     breed: string;
     attributes: string;
     date: string;
+    sharableurl: string;
 }
 
 export default defineEventHandler(async (event) => {
@@ -51,6 +52,7 @@ export default defineEventHandler(async (event) => {
         )
 
         thepoem = poem!
+        thepoem.sharableurl = config.BASE_URL + "/p" + thepoem._id
 
     } finally {
         // Ensures that the client will close when you finish/error

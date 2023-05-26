@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/tailwindcss'],
     runtimeConfig: {
         openAIKey: process.env.OPENAIKEY,
-        mongoURI: process.env.MONGOURI
+        mongoURI: process.env.MONGOURI,
+        BASE_URL: process.env.BASE_URL || 'http://localhost:3000'
     }, // availabe only server side
 })

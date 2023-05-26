@@ -3,16 +3,8 @@
     <ThePoemGenerator></ThePoemGenerator>
   </div>
 </template>
-<script>
-import { defineComponent } from "@vue/composition-api";
 
-export default {
-  name: "IndexPage",
-  components: {},
-};
-</script>
-<script setup>
-import ThePoemGenerator from "@/components/ThePoemGenerator.vue";
+<script lang="ts" setup>
 useHead({
   title: "Cats and Poetry is Catetry",
   meta: [

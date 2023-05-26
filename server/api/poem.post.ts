@@ -14,6 +14,7 @@ export default defineEventHandler(async (event) => {
         })
 
     const body = await readBody(event)
+    var sharableurl
 
     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
     const client = new MongoClient(config.mongoURI, {
@@ -40,12 +41,13 @@ export default defineEventHandler(async (event) => {
         }
         const result = await poemsCollection.insertOne(poem);
         console.log(`A poem was inserted to the CatetryDB with the _id: ${result.insertedId}`)
+        sharableurl = config.BASE_URL + "/p" + result.insertedId
 
     } finally {
         // Ensures that the client will close when you finish/error
         await client.close();
     }
 
-    return "success!"
+    return { sharableurl }
 
 });
