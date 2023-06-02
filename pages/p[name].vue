@@ -24,6 +24,12 @@
           />
         </label>
       </div>
+      <TheFacebookShare
+        :articleUrl="data.sharableurl"
+        :articleTitle="data.name"
+        :articleImage="'https://catetry.vercel.app/images/SiamesePoetSmall.png'"
+        :articleDescription="'Cat poetry is purrfect'"
+      ></TheFacebookShare>
     </div>
   </div>
 </template>
@@ -45,6 +51,22 @@ useHead({
       name: "description",
       content: "Cat poetry is purrfect",
     },
+    {
+      name: "og:url",
+      content: "https://catetry.vercel.app/",
+    },
+    {
+      name: "og:type",
+      content: "website",
+    },
+    {
+      name: "og:title",
+      content: "Catetry is Cat Peotry",
+    },
+    {
+      name: "og:image",
+      content: "https://catetry.vercel.app/images/SiamesePoetSmall.png",
+    },
   ],
 });
 
@@ -54,4 +76,14 @@ const copyURL = () => {
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
 };
+
+(function (d: Document, s: string, id: string): void {
+  let js: HTMLScriptElement;
+  let fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s) as HTMLScriptElement;
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+  fjs.parentNode?.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
 </script>
