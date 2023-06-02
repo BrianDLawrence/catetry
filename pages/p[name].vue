@@ -51,22 +51,6 @@ useHead({
       name: "description",
       content: "Cat poetry is purrfect",
     },
-    {
-      name: "og:url",
-      content: "https://catetry.vercel.app/",
-    },
-    {
-      name: "og:type",
-      content: "website",
-    },
-    {
-      name: "og:title",
-      content: "Catetry is Cat Peotry",
-    },
-    {
-      name: "og:image",
-      content: "https://catetry.vercel.app/images/SiamesePoetSmall.png",
-    },
   ],
 });
 
