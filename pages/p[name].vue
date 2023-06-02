@@ -76,14 +76,4 @@ const copyURL = () => {
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
 };
-
-(function (d: Document, s: string, id: string): void {
-  let js: HTMLScriptElement;
-  let fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s) as HTMLScriptElement;
-  js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-  fjs.parentNode?.insertBefore(js, fjs);
-})(document, "script", "facebook-jssdk");
 </script>
