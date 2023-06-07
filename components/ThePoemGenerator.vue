@@ -56,22 +56,7 @@
           <span style="white-space: pre">{{ poem }}</span>
         </p>
         <div class="py-3" v-if="shareableurl != ''">
-          <button
-            id="copy-button"
-            class="ml-2 copy-button text-secondary font-semibold py-2 px-2 rounded"
-            @click="copyURL"
-          >
-            Copy Shareable Link
-          </button>
-          <label class="input-group input-group-xs">
-            <input
-              id="share-url"
-              class="input-xs w-full bg-white text-gray-700 font-semibold py-2 px-3 rounded"
-              type="text"
-              readonly
-              v-model="shareableurl"
-            />
-          </label>
+          <ACopyURLWidget :shareableurl="shareableurl"></ACopyURLWidget>
           <TheFacebookShare
             :articleUrl="shareableurl"
             :articleTitle="catName"
@@ -133,12 +118,5 @@ const savePoem = async () => {
     console.log(response.value);
     shareableurl.value = response.value?.sharableurl!;
   }
-};
-
-const copyURL = () => {
-  const copyText = document.getElementById("share-url") as HTMLInputElement;
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy");
 };
 </script>
