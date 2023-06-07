@@ -39,7 +39,7 @@
           placeholder="Behaviors, Traits"
         ></textarea>
       </div>
-      <div class="mx-auto justify-items-center md:col-span-2">
+      <div class="mx-auto justify-items-center md:col-span-2" v-if="!isLoading">
         <button
           class="btn"
           @click="generatePoem"
@@ -72,6 +72,12 @@
               v-model="shareableurl"
             />
           </label>
+          <TheFacebookShare
+            :articleUrl="shareableurl"
+            :articleTitle="catName"
+            :articleImage="'https://catetry.vercel.app/images/SiamesePoetSmall.png'"
+            :articleDescription="'Cat poetry is purrfect'"
+          ></TheFacebookShare>
         </div>
       </div>
     </div>
