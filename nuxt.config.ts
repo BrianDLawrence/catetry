@@ -19,10 +19,13 @@ export default defineNuxtConfig({
             ]
         },
     },
-    modules: ['@nuxtjs/tailwindcss'],
+    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
     runtimeConfig: {
         openAIKey: process.env.OPENAIKEY,
         mongoURI: process.env.MONGOURI,
         BASE_URL: process.env.BASE_URL || 'http://localhost:3000'
     }, // availabe only server side
+    gtag: {
+        id: 'G-MESC18QFLG'
+    },
 })
