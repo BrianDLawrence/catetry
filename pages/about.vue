@@ -57,7 +57,7 @@
         she sparked.
       </p>
       <img
-        src="@/images/RileyCat.jpeg"
+        src="/images/RileyCat.jpeg"
         class="h-auto max-w-full"
         alt="Picture of Riley the black cat smiling"
       />
