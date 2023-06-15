@@ -60,7 +60,7 @@
           <TheFacebookShare
             :articleUrl="shareableurl"
             :articleTitle="catName"
-            :articleImage="'https://catetry.vercel.app/images/SiamesePoetSmall.png'"
+            :articleImage="'https://catetry.com/images/SiamesePoetSmall.png'"
             :articleDescription="'Cat poetry is purrfect'"
           ></TheFacebookShare>
         </div>
