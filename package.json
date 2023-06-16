@@ -16,6 +16,7 @@
     "nuxt-gtag": "^0.5.7"
   },
   "dependencies": {
+    "@nuxtjs/google-adsense": "^2.1.0",
     "daisyui": "^2.51.6",
     "mongodb": "5.4",
     "openai": "^3.2.1"

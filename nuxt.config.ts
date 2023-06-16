@@ -19,11 +19,15 @@ export default defineNuxtConfig({
             ]
         },
     },
-    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag'],
+    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag', '@nuxtjs/google-adsense'],
     runtimeConfig: {
         openAIKey: process.env.OPENAIKEY,
         mongoURI: process.env.MONGOURI,
-        BASE_URL: process.env.BASE_URL || 'http://localhost:3000'
+        BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
+        'google-adsense': {
+            id: process.env.GOOGLE_ADSENSE_ID,
+            test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
+        }
     }, // availabe only server side
     gtag: {
         id: 'G-MESC18QFLG'
