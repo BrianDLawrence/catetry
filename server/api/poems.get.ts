@@ -4,7 +4,6 @@
  */
 import { MongoClient, ServerApiVersion } from 'mongodb'
 
-const poemLimit = 3;
 const config = useRuntimeConfig()
 
 interface Poem {
@@ -18,6 +17,8 @@ interface Poem {
 export default defineEventHandler(async (event) => {
     const query = getQuery(event);
     var poem_array: Poem[];
+
+    const poemLimit = new Number(query.poemCount);
 
     if (!config.mongoURI)
         throw createError({
@@ -50,7 +51,7 @@ export default defineEventHandler(async (event) => {
                 sort: { $natural: -1 }, //return latest first by date
                 projection: { _id: 1, poem: 1, name: 1, breed: 1, attributes: 1, date: 1 },
             }
-        ).limit(poemLimit);
+        ).limit(poemLimit.valueOf());
 
         if ((await poemsCollection.countDocuments(filter)) === 0) {
             console.warn("No documents found!");
