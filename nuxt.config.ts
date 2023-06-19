@@ -19,7 +19,7 @@ export default defineNuxtConfig({
             ]
         },
     },
-    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag', '@nuxtjs/google-adsense'],
+    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag', '@nuxtjs/google-adsense', 'nuxt-simple-sitemap', '@nuxtjs/robots'],
     runtimeConfig: {// availabe only server side
         openAIKey: process.env.OPENAIKEY,
         mongoURI: process.env.MONGOURI,
@@ -31,9 +31,13 @@ export default defineNuxtConfig({
                 test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
 
             },
+            siteUrl: 'https://catetry.com',
         },
     },
     gtag: {
         id: 'G-MESC18QFLG'
     },
+    sitemap: {
+        siteUrl: 'https://catetry.com',
+    }
 })

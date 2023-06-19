@@ -17,6 +17,9 @@
       </div>
     </div>
   </div>
+  <div class="container mx-auto py-8">
+    <AGoogleAdBar></AGoogleAdBar>
+  </div>
 </template>
 
 <script lang="ts" setup>

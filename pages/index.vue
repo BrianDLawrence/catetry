@@ -4,11 +4,15 @@
       <ThePoemGenerator></ThePoemGenerator>
     </div>
     <div class="container mx-auto pb-8">
-      <AGoogleAdBar></AGoogleAdBar>
+      <div class="flex justify-center">
+        <div class="prose">
+          <h2>Recent Poems</h2>
+        </div>
+      </div>
+      <PoemLoadWidget :poemCount="3"></PoemLoadWidget>
     </div>
     <div class="container mx-auto pb-8">
-      <center><h1 class="prose">Recent Poems</h1></center>
-      <PoemLoadWidget :poemCount="3"></PoemLoadWidget>
+      <AGoogleAdBar></AGoogleAdBar>
     </div>
   </div>
 </template>

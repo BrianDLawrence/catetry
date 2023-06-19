@@ -17,10 +17,10 @@ export default defineEventHandler(async (event) => {
 
     const question1 = "Can you please create a poem that highlights the good attributes of a cat named " + query.name + "? Please include common attributes of " + query.breed + " cats and additionally the following unique attributes of " + query.name + ":" + query.attributes + "."
     const question2generic = "I want you to create a poem for cat lovers. The poem should be either a haiku, ode, elegy, or limerick - you can choose which type but attempt to choose the best for a cat named:" + query.name + " with the following attributes: " + query.attributes + " Please also include typical cat attributes."
-    const question2specific = "I want you to create a poem for cat lovers. The poem should be either a haiku, ode, elegy, or limerick - you can choose which type but attempt to choose the best for a " + query.breed + "cat named:" + query.name + " with the following attributes: " + query.attributes
+    const question2specific = "I want you to create a poem for cat lovers. The poem should be either a haiku, ode, elegy, or limerick - you can choose which type but attempt to choose the best for a " + query.breed + " cat named:" + query.name + " with the following attributes: " + query.attributes
     var question = "";
 
-    if (query.breed == "American Shorthair")
+    if (query.breed == "American Shorthair" || query.breed == "other")
         question = question2generic;
     else
         question = question2specific;
