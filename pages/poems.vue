@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="container mx-auto py-8">
-      <AGoogleAdBar></AGoogleAdBar>
-    </div>
     <PoemLoadWidget :poemCount="6"></PoemLoadWidget>
   </div>
 </template>

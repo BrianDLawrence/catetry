@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center max-h-24">
     <div class="pb-8 border-4 theWidth theHeight">
-      <adsbygoogle />
+      <!---->
     </div>
   </div>
 </template>

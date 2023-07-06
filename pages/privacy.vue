@@ -3,7 +3,7 @@
     <div class="pb-8 prose">
       <center><h1>Privacy Policy</h1></center>
 
-      <p><strong>Last updated:</strong> June 15th, 2023</p>
+      <p><strong>Last updated:</strong> July 6th, 2023</p>
 
       <p>
         Welcome to Catetry.com. This Privacy Policy outlines how we collect,
@@ -38,11 +38,11 @@
           functionality of our Website. Google Analytics is used to analyze
           traffic and user interaction with the Website.
         </li>
-        <li>
+        <!--<li>
           <strong>Third-Party Advertising:</strong> We use Google Ads to display
           advertisements. Google may use cookies to serve ads based on a user’s
           prior visits to your website or other websites.
-        </li>
+        </li>-->
       </ul>
 
       <h2>How We Use the Information</h2>
@@ -82,7 +82,7 @@
             >Google's Privacy Policy</a
           >.
         </li>
-        <li>
+        <!--<li>
           <strong>Google Ads:</strong> Our Website uses Google Ads for
           advertising. Google Ads uses cookies to serve ads based on your prior
           visits to our Website. For more information on how Google Ads uses
@@ -93,7 +93,7 @@
             rel="noopener"
             >Google’s Advertising Privacy Policy</a
           >.
-        </li>
+        </li>-->
       </ul>
 
       <h2>How You Can Control Cookies</h2>

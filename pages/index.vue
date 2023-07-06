@@ -11,9 +11,10 @@
       </div>
       <PoemLoadWidget :poemCount="3"></PoemLoadWidget>
     </div>
+    <!--
     <div class="container mx-auto pb-8">
       <AGoogleAdBar></AGoogleAdBar>
-    </div>
+    </div>-->
   </div>
 </template>
 

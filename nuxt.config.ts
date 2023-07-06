@@ -19,18 +19,13 @@ export default defineNuxtConfig({
             ]
         },
     },
-    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag', '@nuxtjs/google-adsense', 'nuxt-simple-sitemap', '@nuxtjs/robots'],
+    modules: ['@nuxtjs/tailwindcss', 'nuxt-gtag', 'nuxt-simple-sitemap', '@nuxtjs/robots'],
     runtimeConfig: {// availabe only server side
         openAIKey: process.env.OPENAIKEY,
         mongoURI: process.env.MONGOURI,
         BASE_URL: process.env.BASE_URL || 'http://localhost:3000',
         // Public keys that are exposed to the client
         public: {
-            'google-adsense': {
-                id: process.env.GOOGLE_ADSENSE_ID,
-                test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
-
-            },
             siteUrl: 'https://catetry.com',
         },
     },
