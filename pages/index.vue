@@ -24,7 +24,8 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "WELCOME - Cats and poetry come together to create Catetry.",
+      content:
+        "Unleash your inner poet with Catetry.com! Craft whimsical, heartwarming poems for your feline friends, and celebrate the quirky charms that make them purr-fectly unique.",
     },
   ],
 });
