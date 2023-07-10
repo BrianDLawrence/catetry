@@ -15,6 +15,10 @@ export default defineNuxtConfig({
                 {
                     name: "description",
                     content: "Cats and poetry come together to create Catetry.",
+                },
+                {
+                    name: "monetag",
+                    content: "e03b3ca405723d150690f57719312483",
                 }
             ]
         },
