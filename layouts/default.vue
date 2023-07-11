@@ -3,16 +3,18 @@
     <div class="navbar bg-primary text-primary-content">
       <div class="flex-1">
         <NuxtLink to="/"
-          ><a class="btn btn-ghost normal-case text-xl">CATETRY</a></NuxtLink
+          ><div class="btn btn-ghost normal-case text-xl">
+            CATETRY
+          </div></NuxtLink
         >
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
           <li>
-            <NuxtLink to="/poems"><a>Poems</a></NuxtLink>
+            <NuxtLink to="/poems">Poems</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about"><a>About</a></NuxtLink>
+            <NuxtLink to="/about">About</NuxtLink>
           </li>
         </ul>
       </div>
@@ -20,12 +22,13 @@
     <div class="container mx-auto">
       <NuxtPage />
     </div>
+    <AConsentModal></AConsentModal>
     <footer class="footer items-center p-4 bg-neutral text-neutral-content">
       <div class="items-center grid-flow-col">
         <p>Copyright © 2023 Spero Autem LLC - All right reserved</p>
       </div>
       <div class="items-center grid-flow-col md:justify-center">
-        <NuxtLink to="/privacy"><a>Privacy Policy</a></NuxtLink>
+        <NuxtLink to="/privacy">Privacy Policy</NuxtLink>
       </div>
       <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
         <a
@@ -41,7 +44,7 @@
             ></path>
           </svg>
         </a>
-        <a
+        <a href="https://www.instagram.com/arturo_catetry/"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -68,10 +71,22 @@
     </footer>
   </div>
 </template>
-<script>
-export default {
-  computed: {},
-};
+  
+<script setup lang="ts">
+const consent_cookies = useCookie<{ consent: boolean }>("consent");
+
+onNuxtReady(async () => {
+  if (consent_cookies.value && consent_cookies.value.consent == true) {
+    console.log("Consent Cookie detected");
+    useGtagConsent(true);
+  } else {
+    console.log("NO CONSENT COOKIES");
+    let consent_state = <HTMLInputElement>(
+      document.getElementById("consent_modal")
+    );
+    consent_state.checked = true;
+  }
+});
 </script>
 
 <style scoped>

@@ -56,13 +56,13 @@
           <span style="white-space: pre">{{ poem }}</span>
         </p>
         <div class="py-3" v-if="shareableurl != ''">
-          <ACopyURLWidget :shareableurl="shareableurl"></ACopyURLWidget>
           <TheFacebookShare
             :articleUrl="shareableurl"
             :articleTitle="catName"
             :articleImage="'https://catetry.com/images/SiamesePoetSmall.png'"
             :articleDescription="'Cat poetry is purrfect'"
           ></TheFacebookShare>
+          <ACopyURLWidget :shareableurl="shareableurl"></ACopyURLWidget>
         </div>
       </div>
     </div>

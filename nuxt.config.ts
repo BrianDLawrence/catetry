@@ -34,7 +34,8 @@ export default defineNuxtConfig({
         },
     },
     gtag: {
-        id: 'G-MESC18QFLG'
+        id: 'G-MESC18QFLG',
+        initialConsent: false
     },
     sitemap: {
         siteUrl: 'https://catetry.com',
