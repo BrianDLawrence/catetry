@@ -1,20 +1,28 @@
 <template>
   <div class="container mx-auto px-2">
+    <div class="flex justify-center">
+      <div class="prose">
+        <h1>Unleash your inner poet!</h1>
+      </div>
+    </div>
     <div class="grid md:grid-cols-2 gap-4">
       <div class="form-control">
-        <label class="label">
+        <label class="label" for="catnameinput">
           <span class="label-text">Cat's Name</span>
         </label>
         <input
+          id="catnameinput"
           v-model="catName"
           type="text"
-          placeholder="Your cat's name"
+          placeholder="Enter your cat's name"
           class="input input-primary"
         />
-        <label class="label">
+
+        <label class="label" for="breedinput">
           <span class="label-text">Breed</span>
         </label>
         <select
+          id="breedinput"
           class="select select-primary w-full max-w-xs"
           v-model="breed_selected"
         >
@@ -29,14 +37,15 @@
         </select>
       </div>
       <div class="form-control">
-        <label class="label">
+        <label class="label" for="catattributeinput">
           <span class="label-text">Brief description</span>
           <span class="label-text-alt">Cat Behaviors or Traits</span>
         </label>
         <textarea
+          id="catattributeinput"
           v-model="behavior_traits"
           class="textarea textarea-primary h-32"
-          placeholder="Behaviors, Traits"
+          placeholder="Enter any Behaviors, Traits, or Stories you want us to know"
         ></textarea>
       </div>
       <div class="mx-auto justify-items-center md:col-span-2" v-if="!isLoading">
@@ -45,11 +54,13 @@
           @click="generatePoem"
           :disabled="isGenerateDisabled"
         >
-          Generate Poem
+          Craft Poem
         </button>
       </div>
       <div class="mx-auto justify-items-center md:col-span-2" v-if="isLoading">
-        <ALoadingIndicator :message="'Generating...'"></ALoadingIndicator>
+        <ALoadingIndicator
+          :message="'Crafting with love...'"
+        ></ALoadingIndicator>
       </div>
       <div class="mx-auto justify-items-center md:col-span-2" v-else>
         <p class="font-semibold">

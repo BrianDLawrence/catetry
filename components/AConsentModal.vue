@@ -1,5 +1,10 @@
 <template>
-  <input type="checkbox" id="consent_modal" class="modal-toggle" />
+  <input
+    type="checkbox"
+    id="consent_modal"
+    class="modal-toggle"
+    aria-hidden="true"
+  />
   <div class="modal">
     <div class="modal-box">
       <h3 class="font-bold text-lg">Cookie Settings</h3>

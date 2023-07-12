@@ -19,6 +19,8 @@ export default defineEventHandler(async (event) => {
     var poem_array: Poem[];
 
     const poemLimit = new Number(query.poemCount);
+    const catName = new String(query.catName);
+    const catBreed = new String(query.catBreed);
 
     if (!config.mongoURI)
         throw createError({
@@ -35,7 +37,13 @@ export default defineEventHandler(async (event) => {
         }
     });
 
-
+    let filter = {};
+    if (catName.valueOf() != "undefined") { //filtering if catname is provided - not use of RegEx
+        filter = {
+            name: { $regex: catName.valueOf() },
+            breed: catBreed.valueOf()
+        }
+    }
 
     try {
         // Connect the client to the server	(optional starting in v4.7)
@@ -44,7 +52,6 @@ export default defineEventHandler(async (event) => {
         const database = client.db("CatetryDB");
         const poemsCollection = database.collection<Poem>("Poems");
 
-        const filter = {};
         const poems = poemsCollection.find<Poem>(
             filter,
             {
@@ -55,7 +62,7 @@ export default defineEventHandler(async (event) => {
 
         if ((await poemsCollection.countDocuments(filter)) === 0) {
             console.warn("No documents found!");
-            return "NO DOCUMENTS"
+            return []
         }
 
         poem_array = await poems.toArray();
