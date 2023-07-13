@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center">
-    <div class="pb-8 prose">
+    <div class="pb-8 prose py-2">
       <h1>Why Catetry?</h1>
 
       <p>

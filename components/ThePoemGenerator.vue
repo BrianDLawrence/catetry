@@ -57,7 +57,10 @@
           Craft Poem
         </button>
       </div>
-      <div class="mx-auto justify-items-center md:col-span-2" v-if="isLoading">
+      <div
+        class="mx-auto justify-items-center md:col-span-2 py-2"
+        v-if="isLoading"
+      >
         <ALoadingIndicator
           :message="'Crafting with love...'"
         ></ALoadingIndicator>

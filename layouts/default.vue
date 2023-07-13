@@ -4,9 +4,8 @@
       <div class="flex-1">
         <NuxtLink to="/"
           ><div class="btn btn-ghost normal-case text-xl">
-            CATETRY
-          </div></NuxtLink
-        >
+            <CatetryLogo></CatetryLogo></div
+        ></NuxtLink>
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">

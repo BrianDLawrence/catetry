@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-2 py-2">
-    <div class="grid md:col-span-2">
-      <div class="form-control">
+    <div class="mx-auto justify-items-center">
+      <div class="form-control flex justify-center">
         <label class="label" for="catnameinput">
           <span class="label-text">Cat's Name</span>
         </label>
@@ -30,20 +30,17 @@
           </option>
         </select>
       </div>
-      <div class="mx-auto justify-items-center md:col-span-2" v-if="!isLoading">
+      <div class="flex justify-center pt-4 pb-2" v-if="!isLoading">
         <button class="btn" @click="searchPoem" :disabled="isGenerateDisabled">
           Search
         </button>
       </div>
-      <div class="mx-auto justify-items-center md:col-span-2" v-if="isLoading">
+      <div class="flex justify-center py-2" v-if="isLoading">
         <ALoadingIndicator
           :message="'Loading with love...'"
         ></ALoadingIndicator>
       </div>
-      <div
-        class="mx-auto justify-items-center md:col-span-2"
-        v-if="searchInvoked"
-      >
+      <div class="mx-auto justify-items-center" v-if="searchInvoked">
         <PoemDisplayWidget :data="poem_array"></PoemDisplayWidget>
       </div>
     </div>
