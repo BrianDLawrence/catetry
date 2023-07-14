@@ -62,9 +62,9 @@
       <h2>Third-Party Services</h2>
 
       <p>
-        We may use third-party services such as Google Analytics and Google Ads.
-        These third-party services may collect information sent by your browser
-        as part of a web page request, such as cookies or your IP address.
+        We may use third-party services such as Google Analytics. These
+        third-party services may collect information sent by your browser as
+        part of a web page request, such as cookies or your IP address.
       </p>
 
       <ul>

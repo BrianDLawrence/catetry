@@ -24,23 +24,33 @@
         <button
           id="consent-button"
           class="btn btn-active btn-primary"
-          @click="consent"
+          @click="consentToAll"
         >
           Accept All Cookies
         </button>
       </div>
     </div>
   </div>
+  <div v-if="loadAdCode">
+    <!--<AdInPagePush></AdInPagePush>-->
+  </div>
 </template>
 <script lang='ts' setup>
-const consent_cookies = useCookie<{ consent: boolean }>("consent");
+const loadAds = ref(false);
+const consentAnalyticsCookies = useCookie<{ consent: boolean }>(
+  "consentanalytics"
+);
+const consentAdCookies = useCookie<{ consent: boolean }>("consentads");
 
-const consent = () => {
+const consentToAll = () => {
   let consent_state = <HTMLInputElement>(
     document.getElementById("consent_modal")
   );
-  consent_cookies.value = { consent: true };
+  consentAnalyticsCookies.value = { consent: true };
   useGtagConsent(true);
+  consentAdCookies.value = { consent: true };
+  loadAds.value = true;
+
   consent_state.checked = false;
 };
 
@@ -50,4 +60,11 @@ const decline = () => {
   );
   consent_state.checked = false;
 };
+
+const loadAdCode = computed(() => {
+  return (
+    (consentAdCookies.value && consentAdCookies.value.consent == true) ||
+    loadAds.value
+  );
+});
 </script>
