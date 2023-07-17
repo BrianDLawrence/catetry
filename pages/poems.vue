@@ -7,8 +7,14 @@
     </div>
     <PoemSearchWidget></PoemSearchWidget>
     <div class="flex justify-center">
+      <div class="hidden lg:flex px-5">
+        <CatPawsSvg></CatPawsSvg>
+      </div>
       <div class="prose">
         <h2>Recent Poems</h2>
+      </div>
+      <div class="hidden lg:flex px-5">
+        <CatPawsSvg></CatPawsSvg>
       </div>
     </div>
     <PoemLoadWidget :poemCount="6"></PoemLoadWidget>

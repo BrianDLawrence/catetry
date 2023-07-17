@@ -10,6 +10,9 @@
       <div class="flex-none hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
           <li>
+            <NuxtLink to="/">Home</NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="/poems">Poems</NuxtLink>
           </li>
           <li>
@@ -38,10 +41,13 @@
           tabindex="0"
           class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
         >
-          <li>
+          <li @click="handleClick()">
+            <NuxtLink to="/">Home</NuxtLink>
+          </li>
+          <li @click="handleClick()">
             <NuxtLink to="/poems">Poems</NuxtLink>
           </li>
-          <li>
+          <li @click="handleClick()">
             <NuxtLink to="/about">About</NuxtLink>
           </li>
         </ul>
@@ -59,12 +65,13 @@
         <NuxtLink to="/privacy">Privacy Policy</NuxtLink>
       </div>
       <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a
+        <a href="https://twitter.com/ArturoCatetry"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
             viewBox="0 0 24 24"
+            aria-description="Twitter Link for Catetry"
             class="fill-current"
           >
             <path
@@ -85,18 +92,6 @@
             />
           </svg>
         </a>
-        <a
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            class="fill-current"
-          >
-            <path
-              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
-            ></path></svg
-        ></a>
       </div>
     </footer>
   </div>
@@ -125,6 +120,13 @@ onNuxtReady(async () => {
     consent_state.checked = true;
   }
 });
+
+const handleClick = () => {
+  const elem = <HTMLElement>document.activeElement;
+  if (elem) {
+    elem?.blur();
+  }
+};
 </script>
 
 <style scoped>
