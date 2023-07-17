@@ -38,11 +38,13 @@
           functionality of our Website. Google Analytics is used to analyze
           traffic and user interaction with the Website.
         </li>
-        <!--<li>
-          <strong>Third-Party Advertising:</strong> We use Google Ads to display
-          advertisements. Google may use cookies to serve ads based on a user’s
-          prior visits to your website or other websites.
-        </li>-->
+        <li>
+          <strong>Third-Party Advertising:</strong>
+
+          We use Propeller Ads Limited (Monetag) for online advertisements.
+          Propeller Ads may use cookies to serve ads based on a user’s prior
+          visits to your website or other websites.
+        </li>
       </ul>
 
       <h2>How We Use the Information</h2>
@@ -82,18 +84,15 @@
             >Google's Privacy Policy</a
           >.
         </li>
-        <!--<li>
-          <strong>Google Ads:</strong> Our Website uses Google Ads for
-          advertising. Google Ads uses cookies to serve ads based on your prior
-          visits to our Website. For more information on how Google Ads uses
-          data, please see
-          <a
-            href="https://policies.google.com/technologies/ads"
-            target="_blank"
-            rel="noopener"
-            >Google’s Advertising Privacy Policy</a
+        <li>
+          <strong>Propeller Ads:</strong> Our Website uses Propeller Ads Limited
+          (Monetag) for advertising. Propeller Ads uses cookies to serve ads
+          based on your prior visits to our Website. For more information please
+          visit Propeller Ads privacy Policy
+          <a href="https://monetag.com/privacy/" target="_blank" rel="noopener"
+            >Propeller Ads Privacy Policy</a
           >.
-        </li>-->
+        </li>
       </ul>
 
       <h2>How You Can Control Cookies</h2>
@@ -102,6 +101,17 @@
         Most web browsers allow you to control cookies through their settings
         preferences. However, if you limit the ability of websites to set
         cookies, you may worsen your overall user experience.
+      </p>
+
+      <p>
+        To adhere to GDPR laws, Catetry uses a consent for authorization model.
+        By clicking "Accept All Cookies" on initial load, you agree to the use
+        of Catetry and third-party cookies to enhance your experience, analyse
+        and measure your engagement with our content, and provide more relevant
+        information which may include ads. Note that if you decline, NO cookies
+        will be used. If you accept but you want to change your mind, please
+        select the withdraw consent button below and your consent will be
+        modified to NO.
       </p>
 
       <h2>Changes to this Privacy Policy</h2>
@@ -121,9 +131,31 @@
       </p>
     </div>
   </div>
+  <div class="flex justify-center pt-4 pb-2" v-if="consentTrue">
+    <button
+      id="consent-button"
+      class="btn btn-active btn-primary"
+      @click="decline"
+    >
+      Withdraw/Decline Consent
+    </button>
+  </div>
+  <div class="flex justify-center pt-4 pb-2" v-else>
+    <button
+      id="consent-button"
+      class="btn btn-active btn-primary"
+      @click="consentToAll"
+    >
+      Consent To Cookie Use
+    </button>
+  </div>
 </template>
 
 <script lang="ts" setup>
+const consentAnalyticsCookies = useCookie<{ consent: boolean }>(
+  "consentanalytics"
+);
+const consentAdCookies = useCookie<{ consent: boolean }>("consentads");
 useHead({
   title: "Privacy Policy",
   meta: [
@@ -133,5 +165,32 @@ useHead({
         "Your privacy is important to us. It is Catetrys&#39; policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect about you.",
     },
   ],
+});
+
+const consentToAll = () => {
+  let consent_state = <HTMLInputElement>(
+    document.getElementById("consent_modal")
+  );
+  consentAnalyticsCookies.value = { consent: true };
+  consentAdCookies.value = { consent: true };
+  location.reload();
+};
+
+const decline = () => {
+  let consent_state = <HTMLInputElement>(
+    document.getElementById("consent_modal")
+  );
+  consentAnalyticsCookies.value = { consent: false };
+  consentAdCookies.value = { consent: false };
+  location.reload();
+};
+
+const consentTrue = computed(() => {
+  return (
+    consentAnalyticsCookies.value &&
+    consentAnalyticsCookies.value.consent == true &&
+    consentAdCookies.value &&
+    consentAdCookies.value.consent == true
+  );
 });
 </script>

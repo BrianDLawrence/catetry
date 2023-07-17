@@ -11,7 +11,8 @@
       <p class="py-4">
         By clicking "Accept All Cookies", you agree to the use of Catetry and
         third-party cookies to enhance your experience, analyse and measure your
-        engagement with our content, and provide more relevant information.
+        engagement with our content, and provide more relevant information which
+        may include ads.
       </p>
       <div class="modal-action">
         <button
@@ -32,7 +33,7 @@
     </div>
   </div>
   <div v-if="loadAdCode">
-    <!--<AdInPagePush></AdInPagePush>-->
+    <AdInPagePush1></AdInPagePush1>
   </div>
 </template>
 <script lang='ts' setup>
