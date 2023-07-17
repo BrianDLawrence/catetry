@@ -3,7 +3,7 @@
     <div v-if="pending" class="pb-8">
       <ALoadingIndicator :message="'Loading...'"></ALoadingIndicator>
     </div>
-    <div v-else class="pb-8 prose py-2 px-2">
+    <div v-else class="pb-8 prose py-2 px-2 text-sm md:text-base">
       <h2>{{ data.name }}</h2>
       <span style="white-space: pre"> {{ data.poem }} </span>
       <TheFacebookShare
