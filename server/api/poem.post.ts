@@ -1,29 +1,13 @@
 /**
  * Save generatered poem to db
  */
-import { MongoClient, ServerApiVersion } from 'mongodb'
-
+import client from './mongoConnection'
 const config = useRuntimeConfig()
 
 export default defineEventHandler(async (event) => {
 
-    if (!config.mongoURI)
-        throw createError({
-            statusCode: 400,
-            statusMessage: "UNDEFINED RUNTIME CONFIGURATION - NO MONGO URI"
-        })
-
     const body = await readBody(event)
     var sharableurl
-
-    // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-    const client = new MongoClient(config.mongoURI, {
-        serverApi: {
-            version: ServerApiVersion.v1,
-            strict: true,
-            deprecationErrors: true,
-        }
-    });
 
     try {
         // Connect the client to the server	(optional starting in v4.7)

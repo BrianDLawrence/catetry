@@ -2,7 +2,7 @@
  * Retrieve Poems from database - default is 5 of the latest poems
  * FUTURE - have option to search by Cat name
  */
-import { MongoClient, ServerApiVersion } from 'mongodb'
+import client from './mongoConnection'
 
 const config = useRuntimeConfig()
 
@@ -21,21 +21,6 @@ export default defineEventHandler(async (event) => {
     const poemLimit = new Number(query.poemCount);
     const catName = new String(query.catName);
     const catBreed = new String(query.catBreed);
-
-    if (!config.mongoURI)
-        throw createError({
-            statusCode: 400,
-            statusMessage: "UNDEFINED RUNTIME CONFIGURATION - NO MONGO URI"
-        })
-
-    // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-    const client = new MongoClient(config.mongoURI, {
-        serverApi: {
-            version: ServerApiVersion.v1,
-            strict: true,
-            deprecationErrors: true,
-        }
-    });
 
     let filter = {};
     if (catName.valueOf() != "undefined") { //filtering if catname is provided - not use of RegEx
