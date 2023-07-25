@@ -1,10 +1,6 @@
 <template>
   <div>
-    <button
-      id="copy-button"
-      class="ml-2 copy-button text-secondary font-semibold py-2 px-2 rounded"
-      @click="copyURL"
-    >
+    <button id="copy-button" class="btn btn-primary py-2" @click="copyURL">
       Copy Shareable Link
     </button>
     <label class="input-group input-group-xs">
@@ -28,5 +24,7 @@ const copyURL = () => {
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
+  const copyButton = document.getElementById("copy-button") as HTMLInputElement;
+  copyButton.innerHTML = "✔ Copied!";
 };
 </script>
