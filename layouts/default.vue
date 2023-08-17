@@ -1,14 +1,14 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container-fluid mx-auto">
     <div class="navbar bg-primary text-primary-content">
-      <div class="flex-1">
+      <div class="flex-1 xl:px-20 2xl:px-30">
         <NuxtLink to="/"
           ><div class="btn btn-ghost normal-case text-xl">
             <CatetryLogo></CatetryLogo></div
         ></NuxtLink>
       </div>
       <div class="flex-none hidden lg:flex">
-        <ul class="menu menu-horizontal px-1">
+        <ul class="menu menu-horizontal lg:px-1 xl:px-20 2xl:px-30">
           <li>
             <NuxtLink to="/">Home</NuxtLink>
           </li>
