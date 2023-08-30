@@ -61,10 +61,8 @@
       <div class="items-center grid-flow-col">
         <p>Copyright © 2023 Spero Autem LLC - All right reserved</p>
       </div>
-      <div class="items-center grid-flow-col md:justify-center">
-        <NuxtLink to="/privacy">Privacy Policy</NuxtLink>
-      </div>
       <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+        <NuxtLink to="/privacy">Privacy Policy</NuxtLink>
         <a href="https://twitter.com/ArturoCatetry"
           ><svg
             xmlns="http://www.w3.org/2000/svg"

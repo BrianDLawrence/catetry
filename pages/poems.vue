@@ -1,24 +1,27 @@
 <template>
-  <div>
-    <div class="flex justify-center">
-      <div class="prose">
-        <h1>Search previously crafted</h1>
-      </div>
+  <div class="flex justify-center py-10">
+    <div class="prose lg:prose-xl">
+      <center><h1>Cat Poems</h1></center>
     </div>
-    <PoemSearchWidget></PoemSearchWidget>
-    <div class="flex justify-center">
-      <div class="hidden lg:flex px-5">
-        <CatPawsSvg></CatPawsSvg>
-      </div>
-      <div class="prose">
-        <h2>Recent Poems</h2>
-      </div>
-      <div class="hidden lg:flex px-5">
-        <CatPawsSvg></CatPawsSvg>
-      </div>
-    </div>
-    <PoemLoadWidget :poemCount="6"></PoemLoadWidget>
   </div>
+  <div class="flex justify-center">
+    <div class="prose">
+      <h2>Search</h2>
+    </div>
+  </div>
+  <PoemSearchWidget></PoemSearchWidget>
+  <div class="flex justify-center">
+    <div class="hidden lg:flex px-5">
+      <CatPawsSvg></CatPawsSvg>
+    </div>
+    <div class="prose">
+      <h2>Recent Poems</h2>
+    </div>
+    <div class="hidden lg:flex px-5">
+      <CatPawsSvg></CatPawsSvg>
+    </div>
+  </div>
+  <PoemLoadWidget :poemCount="6"></PoemLoadWidget>
 </template>
 
 <script setup lang="ts">
@@ -27,7 +30,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Cat poetry is purrfect",
+      content: "Cat poetry is purrfect, search previously crafted cat poems!",
     },
   ],
 });

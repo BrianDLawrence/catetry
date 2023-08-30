@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div class="flex justify-center py-10">
+      <div class="prose lg:prose-xl">
+        <h1>Cat Poetry is Catetry</h1>
+        <center><h3>Unleash your inner poet.</h3></center>
+      </div>
+    </div>
     <div class="container mx-auto pb-8">
       <ThePoemGenerator></ThePoemGenerator>
     </div>

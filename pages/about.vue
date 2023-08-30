@@ -1,8 +1,11 @@
 <template>
+  <div class="flex justify-center py-10">
+    <div class="prose lg:prose-xl">
+      <h1>Why Catetry?</h1>
+    </div>
+  </div>
   <div class="flex justify-center">
     <div class="pb-8 prose text-sm md:text-base py-2">
-      <h1>Why Catetry?</h1>
-
       <p>
         Once upon a time, nestled in the heart of a quaint suburban
         neighborhood, a black cat named Riley lived her nine lives in absolute

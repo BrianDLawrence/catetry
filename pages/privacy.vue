@@ -1,8 +1,11 @@
 <template>
+  <div class="flex justify-center py-10">
+    <div class="prose lg:prose-xl">
+      <h1>Privacy Policy</h1>
+    </div>
+  </div>
   <div class="flex justify-center">
     <div class="pb-8 prose">
-      <center><h1>Privacy Policy</h1></center>
-
       <p><strong>Last updated:</strong> July 6th, 2023</p>
 
       <p>
