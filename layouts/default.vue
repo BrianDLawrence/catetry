@@ -4,7 +4,7 @@
       <div class="flex-1 xl:px-20 2xl:px-30">
         <NuxtLink to="/"
           ><div class="btn btn-ghost normal-case text-xl">
-            <CatetryLogo></CatetryLogo></div
+            <CatetryLogo2></CatetryLogo2></div
         ></NuxtLink>
       </div>
       <div class="flex-none hidden lg:flex">

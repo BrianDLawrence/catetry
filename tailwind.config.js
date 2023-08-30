@@ -3,4 +3,10 @@ module.exports = {
     daisyui: {
         themes: ["emerald", "dark", "cmyk"],
     },
+    theme: {
+        fontFamily: {
+            sans: ['Noto Sans', 'sans-serif'],
+            serif: ['Cambria', 'serif'],
+        },
+    },
 };
