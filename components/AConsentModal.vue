@@ -33,7 +33,7 @@
     </div>
   </div>
   <div v-if="loadAdCode">
-    <AdInPagePush1></AdInPagePush1>
+    <!--<AdInPagePush1></AdInPagePush1> NOTE ADS DISABLED FOR NOW -->
   </div>
 </template>
 <script lang='ts' setup>
