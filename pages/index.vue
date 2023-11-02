@@ -3,7 +3,7 @@
     <div class="flex justify-center py-10">
       <div class="prose lg:prose-xl">
         <h1>Cat Poetry is Catetry</h1>
-        <center><h3>Unleash your inner poet.</h3></center>
+        <h3 class="text-center">Unleash your inner poet.</h3>
       </div>
     </div>
     <div class="container mx-auto pb-8">

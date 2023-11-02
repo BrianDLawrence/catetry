@@ -12,6 +12,7 @@ interface Poem {
     breed: string;
     attributes: string;
     date: Date;
+    shortcode: string;
 }
 
 export default defineEventHandler(async (event) => {
@@ -41,7 +42,7 @@ export default defineEventHandler(async (event) => {
             filter,
             {
                 sort: { $natural: -1 }, //return latest first by date
-                projection: { _id: 1, poem: 1, name: 1, breed: 1, attributes: 1, date: 1 },
+                projection: { _id: 1, poem: 1, name: 1, breed: 1, attributes: 1, date: 1, shortcode: 1 },
             }
         ).limit(poemLimit.valueOf());
 

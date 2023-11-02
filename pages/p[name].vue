@@ -5,13 +5,10 @@
     </div>
     <div v-else class="pb-8 prose py-2 px-2 text-sm md:text-base">
       <h2>{{ data.name }}</h2>
-      <span style="white-space: pre"> {{ data.poem }} </span>
-      <TheFacebookShare
-        :articleUrl="data.sharableurl"
-        :articleTitle="data.name"
-        :articleImage="'https://catetry.com/images/SiamesePoetSmall.png'"
-        :articleDescription="'Cat poetry is purrfect'"
-      ></TheFacebookShare>
+      <div class="whitespace-pre-wrap w-fit"> {{ data.poem }} </div>
+      <TheFacebookShare :articleUrl="data.sharableurl" :articleTitle="data.name"
+        :articleImage="'https://catetry.com/images/SiamesePoetSmall.png'" :articleDescription="'Cat poetry is purrfect'">
+      </TheFacebookShare>
       <div class="py-3">
         <ACopyURLWidget :shareableurl="data.sharableurl"></ACopyURLWidget>
       </div>

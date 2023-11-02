@@ -13,6 +13,7 @@ interface Poem {
     breed: string;
     attributes: string;
     date: string;
+    shortcode: string;
     sharableurl: string;
 }
 
@@ -21,7 +22,6 @@ export default defineEventHandler(async (event) => {
     const poemid = new String(query.poemid);
     var thepoem: Poem;
 
-    console.log(query.poemid)
     try {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
@@ -30,14 +30,14 @@ export default defineEventHandler(async (event) => {
         const poemsCollection = database.collection<Poem>("Poems");
 
         const poem = await poemsCollection.findOne<Poem>(
-            { _id: new ObjectId(poemid.toString()) },
+            { shortcode: poemid.toString() },
             {
-                projection: { _id: 1, poem: 1, name: 1, breed: 1, attributes: 1, date: 1 },
+                projection: { _id: 1, poem: 1, name: 1, breed: 1, attributes: 1, date: 1, shortcode: 1 },
             }
         )
 
         thepoem = poem!
-        thepoem.sharableurl = config.BASE_URL + "/p" + thepoem._id
+        thepoem.sharableurl = config.BASE_URL + "/p" + thepoem.shortcode
 
     } finally {
         // Ensures that the client will close when you finish/error

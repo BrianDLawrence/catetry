@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center py-10">
     <div class="prose lg:prose-xl">
-      <center><h1>Cat Poems</h1></center>
+      <h1>Cat Poems</h1>
     </div>
   </div>
   <div class="flex justify-center">
