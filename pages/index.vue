@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center py-10">
+    <div class="flex justify-center py-10 bg-primary w-full">
       <div class="prose lg:prose-xl">
         <h1>Cat Poetry is Catetry</h1>
         <h3 class="text-center">Unleash your inner poet.</h3>

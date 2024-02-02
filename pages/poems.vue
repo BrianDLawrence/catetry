@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center py-10">
+  <div class="flex justify-center py-10 bg-primary w-full">
     <div class="prose lg:prose-xl">
       <h1>Cat Poems</h1>
     </div>
@@ -21,7 +21,9 @@
       <CatPawsSvg></CatPawsSvg>
     </div>
   </div>
-  <PoemLoadWidget :poemCount="6"></PoemLoadWidget>
+  <div class="container mx-auto">
+    <PoemLoadWidget :poemCount="6"></PoemLoadWidget>
+  </div>
 </template>
 
 <script setup lang="ts">
