@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
     query.name +
     ":" +
     query.attributes +
-    ".";
+    ". Please respond with ONLY the poem as the output is intended to be used in a web application and should not include any additional text or explanations.";
   const question2generic =
     "I want you to create a poem for cat lovers. Please be creative and choose an appropriate poem type for a cat named:" +
     query.name +
@@ -36,7 +36,8 @@ export default defineEventHandler(async (event) => {
     " cat named:" +
     query.name +
     " with the following attributes: " +
-    query.attributes;
+    query.attributes +
+    ". Please respond with ONLY the poem as the output is intended to be used in a web application and should not include any additional text or explanations.";
   var question = "";
 
   if (query.breed == "American Shorthair" || query.breed == "other")
@@ -52,7 +53,7 @@ export default defineEventHandler(async (event) => {
   const openai = new OpenAIApi(configuration);
   try {
     const completion = await openai.createChatCompletion({
-      model: "gpt-4o-mini",
+      model: "gpt-4.1-mini",
       messages: [{ role: "user", content: question }],
     });
 

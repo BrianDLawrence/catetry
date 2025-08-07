@@ -71,7 +71,7 @@
     <div class="bg-neutral w-full">
       <footer class="container mx-auto footer items-center p-4 text-neutral-content">
         <div class="items-center grid-flow-col">
-          <p>Copyright © 2024 Spero Autem LLC - All right reserved</p>
+          <p>Copyright © 2025 Spero Autem LLC - All right reserved</p>
         </div>
         <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
           <NuxtLink to="/privacy">Privacy Policy</NuxtLink>
